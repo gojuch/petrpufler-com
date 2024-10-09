@@ -6,9 +6,9 @@ import {
 
 import '@/styles/main.css'
 
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-import { NoisyBackground } from '@/components/noisy-background'
+import { Header } from '@/components/global/header'
+import { Footer } from '@/components/global/footer'
+import { NoisyBackground } from '@/components/global/noisy-background'
 
 const fontSans = FontSansFont({
 	variable: '--font-sans',

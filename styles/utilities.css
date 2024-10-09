@@ -7,7 +7,7 @@
 		position: fixed;
 	}
 
-	.shadow-blur {
-		filter: url(#shadow);
+	.ambilight {
+		filter: url(#ambilight);
 	}
 }
