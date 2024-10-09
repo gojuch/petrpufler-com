@@ -1,0 +1,13 @@
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	svg[aria-hidden='true'] {
+		position: fixed;
+	}
+
+	.shadow-blur {
+		filter: url(#shadow);
+	}
+}

@@ -1,0 +1,7 @@
+.post {
+	@apply max-w-prose;
+
+	p {
+		@apply mb-4;
+	}
+}

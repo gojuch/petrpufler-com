@@ -1,0 +1,11 @@
+{
+	"printWidth": 80,
+	"arrowParens": "always",
+	"singleQuote": true,
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"semi": false,
+	"useTabs": true,
+	"tailwindConfig": "./tailwind.config.ts",
+	"plugins": ["prettier-plugin-tailwindcss"]
+}
