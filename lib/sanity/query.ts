@@ -24,18 +24,19 @@ export const aboutPageQuery = `
 
 // New query for fetching homepage featured collections
 export const homepageFeaturedCollectionsQuery = `
-  *[_type == "homepage"][0] {
+*[_type == "homepage"][0] {
+  ...,
+  "featuredCollections": featuredCollections[]-> {
+    _id,
+    _type,
     title,
-    featuredCollections[]-> {
-      _id,
-      title,
-      slug,
-      coverImage {
-        _key,
-        asset->
-      }
-    }
+    slug,
+    coverImage,
+    description,
+    images,
+    videos
   }
+}
 `
 
 export const contactPageQuery = `

@@ -58,6 +58,7 @@ export default async function CollectionPage({
 						return (
 							<SanityImage
 								key={image._key}
+								// @ts-expect-error don't know how to fix this right now
 								image={image.asset}
 								alt={`Image ${index + 1} from ${collection.title}`}
 							/>

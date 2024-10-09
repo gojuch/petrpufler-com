@@ -1,5 +1,6 @@
-import { Collections } from '@/lib/sanity/sanity.types'
 import { CollectionCard } from '@/components/collections/collection-card'
+
+import type { Collections } from '@/lib/sanity/sanity.types'
 
 interface CollectionsListingProps {
 	collections: Collections[]
