@@ -1,3 +1,5 @@
+'server-only'
+
 import { createClient } from '@sanity/client'
 import type { QueryParams } from '@sanity/client'
 

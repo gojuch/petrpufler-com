@@ -18,18 +18,18 @@ interface AmbilightProps {
 
 export function Ambilight({
 	// Higher values increase blur, lower values reduce it
-	blurAmount = 0.15,
+	blurAmount = 0.25,
 	// Higher values increase the offset, lower values reduce it
-	offsetXAmount = 0.0,
-	offsetYAmount = 0.0,
+	offsetXAmount = -0.05,
+	offsetYAmount = -0.05,
 	// Higher values create finer noise, lower values create coarser noise
 	turbulenceFrequency = 5.173,
 	// Higher values increase distortion, lower values reduce it
-	displacementScale = 0.2,
+	displacementScale = 0.3,
 	// Higher values make the effect more opaque, lower values make it more transparent
-	alphaSlope = 0.55,
+	alphaSlope = 0.95,
 	// Animation is enabled by default
-	isAnimated = true,
+	isAnimated = false,
 	// Default animation speed (adjust as needed)
 	animationSpeed = 0.5,
 }: AmbilightProps = {}) {
