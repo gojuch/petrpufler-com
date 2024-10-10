@@ -41,7 +41,7 @@ export function Ambilight({
 				y="-100%"
 				width="300%"
 				height="300%"
-				color-interpolation-filters="sRGB"
+				colorInterpolationFilters="sRGB"
 				primitiveUnits="objectBoundingBox"
 			>
 				{/* Apply Gaussian blur to the image */}
