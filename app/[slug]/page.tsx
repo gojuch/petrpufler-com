@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation'
+import dynamic from 'next/dynamic'
 
 import { sanityFetch } from '@/lib/sanity/client'
 import { singleCollectionQuery } from '@/lib/sanity/query'
 import { Collections } from '@/lib/sanity/sanity.types'
-import { SanityImage } from '@/components/ui/sanity-image'
+
+// Dynamically import the Lightbox component
+const Lightbox = dynamic(() => import('@/components/ui/lightbox'))
 
 export async function generateMetadata({
 	params: { slug },
@@ -44,6 +47,8 @@ export default async function CollectionPage({
 		notFound()
 	}
 
+	// console.log('Collection images:', collection.images) // Add this line
+
 	return (
 		<div className="container mx-auto max-w-screen-md px-4 py-8">
 			<h1 className="text-lg font-semibold text-white">{collection.title}</h1>
@@ -51,20 +56,9 @@ export default async function CollectionPage({
 				{collection.description}
 			</p>
 
-			<div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-				{collection.images &&
-					collection.images.length > 0 &&
-					collection.images.map((image, index) => {
-						return (
-							<SanityImage
-								key={image._key}
-								// @ts-expect-error don't know how to fix this right now
-								image={image.asset}
-								alt={`Image ${index + 1} from ${collection.title}`}
-							/>
-						)
-					})}
-			</div>
+			{collection.images && collection.images.length > 0 && (
+				<Lightbox images={collection.images} title={collection.title || ''} />
+			)}
 		</div>
 	)
 }

@@ -34,7 +34,7 @@ export function Ambilight({
 	animationSpeed = 0.5,
 }: AmbilightProps = {}) {
 	return (
-		<svg aria-hidden="true">
+		<svg aria-hidden="true" className="svg-effect">
 			<filter
 				id="ambilight"
 				x="-100%"

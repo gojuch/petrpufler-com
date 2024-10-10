@@ -3,7 +3,7 @@
 		text-wrap: balance;
 	}
 
-	svg[aria-hidden='true'] {
+	.svg-effect {
 		position: fixed;
 	}
 
