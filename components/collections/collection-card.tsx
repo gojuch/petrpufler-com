@@ -19,7 +19,7 @@ export function CollectionCard({ collection }: CollectionCardProps) {
 						// @ts-expect-error can't figure out why this is not working
 						image={collection.coverImage}
 						alt={collection.title || 'Collection cover'}
-						className="ambilight"
+						className="ambilight rounded shadow-lg"
 					/>
 				)}
 

@@ -16,7 +16,8 @@ export function Header() {
 		<header
 			className={cn(
 				'container sticky top-0 z-10 py-4 transition-colors duration-300 lg:py-8',
-				isScrolled && 'bg-background/50 backdrop-blur-sm',
+				isScrolled &&
+					'bg-background/50 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none',
 			)}
 		>
 			<div className="flex items-center justify-between">

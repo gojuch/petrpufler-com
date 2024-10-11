@@ -31,7 +31,13 @@ export const homepageFeaturedCollectionsQuery = `
     _type,
     title,
     slug,
-    coverImage,
+    coverImage {
+      _key,
+      asset->{
+        ...,
+        metadata
+      }
+    },
     description,
     images,
     videos
