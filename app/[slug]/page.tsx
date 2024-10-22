@@ -5,6 +5,8 @@ import { sanityFetch } from '@/lib/sanity/client'
 import { singleCollectionQuery } from '@/lib/sanity/query'
 import { Collections } from '@/lib/sanity/sanity.types'
 
+export const revalidate = 0
+
 // Dynamically import the Lightbox component
 const Lightbox = dynamic(() => import('@/components/ui/lightbox'))
 
