@@ -1,6 +1,7 @@
 export const singleCollectionQuery = `
   *[_type == "collections" && slug.current == $slug][0] {
     title,
+    "slug": slug.current,
     description,
     images[] {
       _key,
@@ -13,6 +14,7 @@ export const singleCollectionQuery = `
 export const aboutPageQuery = `
   *[_type == "about"][0] {
     title,
+    "slug": slug.current,
     subtitle,
     content,
     profilePhoto {
@@ -26,6 +28,7 @@ export const aboutPageQuery = `
 export const homepageFeaturedCollectionsQuery = `
 *[_type == "homepage"][0] {
   ...,
+  "slug": slug.current,
   "featuredCollections": featuredCollections[]-> {
     _id,
     _type,
