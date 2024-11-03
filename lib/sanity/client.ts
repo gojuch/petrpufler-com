@@ -22,7 +22,7 @@ export async function sanityFetch<QueryResponse>({
 	qParams?: QueryParams
 	tags: string[]
 }): Promise<QueryResponse> {
-	return client.fetch<QueryResponse>(query, qParams, {
+	return client.fetch<QueryResponse>(query, qParams || {}, {
 		cache: 'force-cache',
 		next: { tags },
 	})
