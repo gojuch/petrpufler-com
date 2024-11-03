@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
 	try {
 		const { body, isValidSignature } = await parseBody<{
 			_type: string
-			_id?: string | undefined
 			slug?: string | undefined
 		}>(req, process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET)
 
