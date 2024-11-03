@@ -18,6 +18,23 @@ export async function POST(req: NextRequest) {
 		}
 
 		revalidateTag(body._type)
+
+		switch (body._type) {
+			case 'collections':
+				revalidateTag('collection')
+				revalidateTag('homepage')
+				break
+			case 'homepage':
+				revalidateTag('homepage')
+				break
+			case 'about':
+				revalidateTag('about')
+				break
+			case 'contact':
+				revalidateTag('contact')
+				break
+		}
+
 		return NextResponse.json({
 			status: 200,
 			revalidated: true,

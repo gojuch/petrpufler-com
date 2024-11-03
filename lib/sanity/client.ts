@@ -10,7 +10,7 @@ export const client = createClient({
 	projectId,
 	dataset,
 	apiVersion,
-	useCdn: true,
+	useCdn: false,
 })
 
 export async function sanityFetch<QueryResponse>({
@@ -23,7 +23,9 @@ export async function sanityFetch<QueryResponse>({
 	tags: string[]
 }): Promise<QueryResponse> {
 	return client.fetch<QueryResponse>(query, qParams || {}, {
-		cache: 'force-cache',
-		next: { tags },
+		next: {
+			tags,
+			revalidate: false, // This ensures we're always getting fresh data
+		},
 	})
 }
