@@ -6,6 +6,9 @@ import { About, Contact } from '@/lib/sanity/sanity.types'
 
 import { SanityImage } from '@/components/ui/sanity-image'
 
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 export default async function AboutPage() {
 	const aboutPage = await sanityFetch<About>({
 		query: aboutPageQuery,
